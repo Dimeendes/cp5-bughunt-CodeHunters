@@ -9,10 +9,12 @@
 
 | Integrante | RM | Turma |
 |---|---|---|
-| | | |
-| | | |
-| | | |
-| | | |
+| Diego Antonio Silva Mendes | 565509 | 2CCPG |
+| Thiago Sobral de Alvarenga | 562695 | 2CCPG |
+| Pedro Miranda Campos Riato | 562117 | 2CCPG |
+| Israel Karacsony de Camargo Nunes | 563435 | 2CCPG |
+| Giovanni de Lela Anjos Costa | 563066 | 2CCPG |
+| Gabriel Hiro Nakamura | 562221 | 2CCPG |
 
 | Campo | |
 |---|---|
