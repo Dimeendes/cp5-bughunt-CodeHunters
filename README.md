@@ -18,7 +18,7 @@
 
 | Campo | |
 |---|---|
-| **Total de bugs corrigidos** | 02 / 12 |
+| **Total de bugs corrigidos** | 03 / 12 |
 | **Total de ajustes de Clean Code** | ___ / 6 |
 | **Total de testes novos escritos** | ___ / 6 |
 | **Suíte final (Run As → JUnit Test)** | ___ testes, ___ falhas |
@@ -34,7 +34,7 @@
 |---|---|---|---|---|
 | bug01 | O atributo `petNome` estava sem o referenciador `this` no builder de atendimento, fazendo com que o nome não seja armazenado corretamente e ser nulo sempre(Atualmente está como `petNome = petNome`) | Arquivo `AtendimentoBuilder.java` (linha 24). | Adicionado referênciador `this` ao atributo `petNome`, fazendo a lógica ser `this.petNome = petNome;` | Aula 02 (Métodos e comportamentos) - Referência a atributos |
 | bug02 | Builder de atendimento não verificava se o mesmo vinha sem nome, falhando no teste de `deveRecusarMontagemSemNomeDoPet` | Arquivo `AtendimentoBuilder.java` (linha 42). | Adicionado lógica simples com uso de if para verificar se `petNome == null` ou `petNome == isBlank()`, se esse for o caso, o sistema lança uma exception de argumento invalido (`IllegalArgumentException`), se passar na validação, o sistema cria o atendimento normalmente. | Aula 11: Quando Dá Errado (Tratamento de Exceções) / Regra de negócio |
-| bug03 | | | | |
+| bug03 | Builder de atendimento não verificava se o mesmo vinha sem porte, falhando no teste de `deveRecusarMontagemSemPorte` | Arquivo `AtendimentoBuilder.java` (linha 45). | Adicionado lógica simples com uso de if para verificar se `petPorte == null` ou `petPorte == isBlank()`, se esse for o caso, o sistema lança uma exception de argumento invalido (`IllegalArgumentException`), se passar na validação, o sistema cria o atendimento normalmente. | Aula 11: Quando Dá Errado (Tratamento de Exceções) / Regra de negócio |
 | bug04 | | | | |
 | bug05 | | | | |
 | bug06 | | | | |
