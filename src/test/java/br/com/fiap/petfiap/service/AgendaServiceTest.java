@@ -124,4 +124,17 @@ public class AgendaServiceTest {
         assertEquals("CANCELADO", cancelado.getStatus());
         verify(repository).save(agendado);
     }
+    @Test
+    public void deveRecusarCancelamentoDeAtendimentoJaConcluido() {
+        // Arrange
+        Banho jaConcluido = banhoDoRexAmanha10h();
+        jaConcluido.setStatus("CONCLUIDO");
+        when(repository.findById(1L)).thenReturn(Optional.of(jaConcluido));
+
+        // Act + Assert
+        assertThrows(StatusInvalidoException.class, () -> service.cancelar(1L));
+
+        // Nada e salvo quando a operacao e recusada
+        verify(repository, never()).save(any());
+    }
 }
