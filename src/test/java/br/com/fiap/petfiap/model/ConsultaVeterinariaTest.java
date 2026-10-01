@@ -30,4 +30,33 @@ public class ConsultaVeterinariaTest {
         // Assert
         assertEquals(30, duracao);
     }
+    
+    @Test
+    public void deveCustar150ReaisIndependenteDoPorte() {
+        // Arrange
+        ConsultaVeterinaria pequeno = new ConsultaVeterinaria(
+                1, "Mimi", "PEQUENO", "Bruno",
+                LocalDateTime.of(2026, 10, 1, 14, 0)
+        );
+
+        ConsultaVeterinaria medio = new ConsultaVeterinaria(
+                2, "Mimi", "MEDIO", "Bruno",
+                LocalDateTime.of(2026, 10, 1, 14, 0)
+        );
+
+        ConsultaVeterinaria grande = new ConsultaVeterinaria(
+                3, "Mimi", "GRANDE", "Bruno",
+                LocalDateTime.of(2026, 10, 1, 14, 0)
+        );
+
+        // Act
+        double precoPequeno = pequeno.calcularPreco();
+        double precoMedio = medio.calcularPreco();
+        double precoGrande = grande.calcularPreco();
+
+        // Assert
+        assertEquals(150.0, precoPequeno, 0.001);
+        assertEquals(150.0, precoMedio, 0.001);
+        assertEquals(150.0, precoGrande, 0.001);
+    }
 }
