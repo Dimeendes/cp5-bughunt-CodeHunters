@@ -66,7 +66,7 @@
 | # | Teste escrito (classe.método) | Regra coberta | Resultado ao escrever (vermelho/verde) |
 |---|---|---|---|
 | teste01 | `TosaTest.deveDurar60Minutos()` | Tosa deve ter duração de 60 minutos.| Vermelho - revelou um bug em que a duração estava com parâmetro e não sobrescrevia o método esperado.|
-| teste02 | | | |
+| teste02 | ` BanhoTest.deveCalcularPrecoPorPorte() `| Banho deve custar R$ 60 para pequeno, R$ 80 para médio e R$ 100 para grande.| Vermelho - revelou um bug em que os preços de pequeno e grande estavam invertidos. |
 | teste03 | | | |
 | teste04 | | | |
 | teste05 | | | |
