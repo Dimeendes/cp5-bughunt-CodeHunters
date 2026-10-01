@@ -38,7 +38,7 @@
 | bug04 | Case switch implementação incorreta de tosa. Quando o sistema detectava que uma `TOSA` foi criada, ele tentava criar incorretamente um novo `BANHO`, fazendo com que uma tosa nunca fosse criada, mesmo que esse fosse o tipo de atendimento agendado e falhando no teste de `deveCriarTosaQuandoTipoForTosa`. | Arquivo `AtendimentoFactory.java` (linha 17). | Alterado implementação de case de `TOSA` para criar uma nova tosa (`new Tosa`) ao invés de banho (`new Banho`).| Regra de negócio |
 | bug05 | O Singleton não mantinha uma única instância.| arquivo `GeradorProtocolo.java`, linha 19, Uma nova instância era criada e retornada sem ser armazenada em `instancia`.| Armazenar a nova instância em `instancia` antes de retorná-la. | Aula 14 - Singleton .|
 | bug06 | A consulta veterinária não preenchia os dados do pet e do atendimento. | arquivo `ConsultaVeterinaria.java`, linha 17. Construtor de ConsultaVeterinaria  chamava `super()` vazio.| O `super()` foi alterado para `super(protocolo, petNome, petPorte, tutorNome, dataHora)`.| Aula 6 (Herança) - uso obrigatório de super nas classes filhas.|
-| bug07 | | | | |
+| bug07 | A duração em minutos da Tosa não estava sendo definida pelo método esperado.| arquivo `Tosa.java`, linha 40. O método tinha um parâmetro e fazia uma sobrecarga em vez de sobrescrita.| Remove o parâmetro e adiciona `@Override`.| Aula 7 (Polimorfismo) - diferença entre sobrescrita (override) e sobrecarga (overload) de métodos.|
 | bug08 | | | | |
 | bug09 | | | | |
 | bug10 | | | | |
