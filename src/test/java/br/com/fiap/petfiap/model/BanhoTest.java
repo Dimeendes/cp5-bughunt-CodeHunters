@@ -30,4 +30,22 @@ public class BanhoTest {
         // Assert
         assertEquals(45, duracao);
     }
+    
+    @Test
+    public void deveCalcularPrecoPorPorte() {
+        // Arrange
+        Banho pequeno = new Banho(1, "Rex", "PEQUENO", "Ana", LocalDateTime.of(2026, 10, 1, 10, 0));
+        Banho medio = new Banho(2, "Rex", "MEDIO", "Ana", LocalDateTime.of(2026, 10, 1, 10, 0));
+        Banho grande = new Banho(3, "Rex", "GRANDE", "Ana", LocalDateTime.of(2026, 10, 1, 10, 0));
+
+        // Act
+        double precoPequeno = pequeno.calcularPreco();
+        double precoMedio = medio.calcularPreco();
+        double precoGrande = grande.calcularPreco();
+
+        // Assert
+        assertEquals(60.0, precoPequeno, 0.001);
+        assertEquals(80.0, precoMedio, 0.001);
+        assertEquals(100.0, precoGrande, 0.001);
+    }
 }
