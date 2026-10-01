@@ -18,7 +18,7 @@
 
 | Campo | |
 |---|---|
-| **Total de bugs corrigidos** | ___ / 12 |
+| **Total de bugs corrigidos** | 01 / 12 |
 | **Total de ajustes de Clean Code** | ___ / 6 |
 | **Total de testes novos escritos** | ___ / 6 |
 | **Suíte final (Run As → JUnit Test)** | ___ testes, ___ falhas |
@@ -32,7 +32,7 @@
 
 | # | Sintoma observado (o que fiz/vi) | Causa raiz (arquivo e linha aproximada) | Correção aplicada | Conceito da disciplina |
 |---|---|---|---|---|
-| bug01 | | | | |
+| bug01 | O atributo `petNome` estava sem o referenciador `this` no builder de atendimento, fazendo com que o nome não seja armazenado corretamente e ser nulo sempre(Atualmente está como `petNome = petNome`) | Arquivo `AtendimentoBuilder.java` (linha 24). | Adicionado referênciador `this` ao atributo `petNome`, fazendo a lógica ser `this.petNome = petNome;` | Aula 02 (Métodos e comportamentos) - Referência a atributos |
 | bug02 | | | | |
 | bug03 | | | | |
 | bug04 | | | | |
