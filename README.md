@@ -65,7 +65,7 @@
 
 | # | Teste escrito (classe.método) | Regra coberta | Resultado ao escrever (vermelho/verde) |
 |---|---|---|---|
-| teste01 | | | |
+| teste01 | `TosaTest.deveDurar60Minutos()` | Tosa deve ter duração de 60 minutos.| Vermelho - revelou um bug em que a duração estava com parâmetro e não sobrescrevia o método esperado.|
 | teste02 | | | |
 | teste03 | | | |
 | teste04 | | | |
