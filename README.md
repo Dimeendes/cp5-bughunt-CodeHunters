@@ -68,7 +68,7 @@
 | teste01 | `TosaTest.deveDurar60Minutos()` | Tosa deve ter duração de 60 minutos.| Vermelho - revelou um bug em que a duração estava com parâmetro e não sobrescrevia o método esperado.|
 | teste02 | ` BanhoTest.deveCalcularPrecoPorPorte() `| Banho deve custar R$ 60 para pequeno, R$ 80 para médio e R$ 100 para grande.| Vermelho - revelou um bug em que os preços de pequeno e grande estavam invertidos. |
 | teste03 | `ConsultaVeterinariaTest.deveCustar150ReaisIndependenteDoPorte()`|  Consulta veterinária deve custar R$ 150 independentemente do porte.| Verde - a regra já estava correta. |
-| teste04 | | | |
+| teste04 | `AgendaServiceTest.deveCancelarAtendimentoAgendado()` | Atendimento com status AGENDADO deve virar CANCELADO ao chamar cancelar(). | Verde - a regra já estava correta (o cancelar() sempre conseguiu setar o status, só faltava a validação dos outros casos). |
 | teste05 | | | |
 | teste06 | | | |
 
