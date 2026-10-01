@@ -70,7 +70,7 @@
 | teste03 | `ConsultaVeterinariaTest.deveCustar150ReaisIndependenteDoPorte()`|  Consulta veterinária deve custar R$ 150 independentemente do porte.| Verde - a regra já estava correta. |
 | teste04 | `AgendaServiceTest.deveCancelarAtendimentoAgendado()` | Atendimento com status AGENDADO deve virar CANCELADO ao chamar cancelar(). | Verde - a regra já estava correta (o cancelar() sempre conseguiu setar o status, só faltava a validação dos outros casos). |
 | teste05 | `AgendaServiceTest.deveRecusarCancelamentoDeAtendimentoJaConcluido()` | Atendimento já CONCLUIDO (ou já CANCELADO) não pode ser cancelado novamente. | Vermelho - revelou o bug11: cancelar() não verificava o status atual antes de cancelar. |
-| teste06 | | | |
+| teste06 | `AgendaServiceTest.deveRecusarAgendamentoComDataHoraNoPassado()` | Agendamento com data/hora no passado deve ser recusado com IllegalArgumentException, sem consultar o banco. | Vermelho - revelou o bug12: agendar() não validava data/hora retroativa. |
 
 ---
 
