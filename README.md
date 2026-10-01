@@ -39,7 +39,7 @@
 | bug05 | O Singleton não mantinha uma única instância.| arquivo `GeradorProtocolo.java`, linha 19, Uma nova instância era criada e retornada sem ser armazenada em `instancia`.| Armazenar a nova instância em `instancia` antes de retorná-la. | Aula 14 - Singleton .|
 | bug06 | A consulta veterinária não preenchia os dados do pet e do atendimento. | arquivo `ConsultaVeterinaria.java`, linha 17. Construtor de ConsultaVeterinaria  chamava `super()` vazio.| O `super()` foi alterado para `super(protocolo, petNome, petPorte, tutorNome, dataHora)`.| Aula 6 (Herança) - uso obrigatório de super nas classes filhas.|
 | bug07 | A duração em minutos da Tosa não estava sendo definida pelo método esperado.| arquivo `Tosa.java`, linha 40. O método tinha um parâmetro e fazia uma sobrecarga em vez de sobrescrita.| Remove o parâmetro e adiciona `@Override`.| Aula 7 (Polimorfismo) - diferença entre sobrescrita (override) e sobrecarga (overload) de métodos.|
-| bug08 | | | | |
+| bug08 | Os preços de banho para porte pequeno e grande estavam invertidos. | arquivo `Banho.java`, linhas 25-33. Os valores de Pequeno e Grande estavam trocados em `calcularPreco()`.|  Os valores foram colocados na ordem certa respeitando a regra de negócio, em que PEQUENO agora retorna 60.0 e GRANDE retorna 100.0.| Aulas 2 e 3 -  Métodos e regras de negócio.|
 | bug09 | | | | |
 | bug10 | | | | |
 | bug11 | | | | |
