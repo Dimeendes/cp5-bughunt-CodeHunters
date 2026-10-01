@@ -69,7 +69,7 @@
 | teste02 | ` BanhoTest.deveCalcularPrecoPorPorte() `| Banho deve custar R$ 60 para pequeno, R$ 80 para médio e R$ 100 para grande.| Vermelho - revelou um bug em que os preços de pequeno e grande estavam invertidos. |
 | teste03 | `ConsultaVeterinariaTest.deveCustar150ReaisIndependenteDoPorte()`|  Consulta veterinária deve custar R$ 150 independentemente do porte.| Verde - a regra já estava correta. |
 | teste04 | `AgendaServiceTest.deveCancelarAtendimentoAgendado()` | Atendimento com status AGENDADO deve virar CANCELADO ao chamar cancelar(). | Verde - a regra já estava correta (o cancelar() sempre conseguiu setar o status, só faltava a validação dos outros casos). |
-| teste05 | | | |
+| teste05 | `AgendaServiceTest.deveRecusarCancelamentoDeAtendimentoJaConcluido()` | Atendimento já CONCLUIDO (ou já CANCELADO) não pode ser cancelado novamente. | Vermelho - revelou o bug11: cancelar() não verificava o status atual antes de cancelar. |
 | teste06 | | | |
 
 ---
