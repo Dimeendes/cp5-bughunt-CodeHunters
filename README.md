@@ -112,6 +112,8 @@ bugs) e outros verdes de cara (regras já corretas). Vale a pena manter os que
 ficaram verdes? Em um projeto real com prazo, o que você priorizaria testar:
 caminho feliz, caminhos de erro, ou 100% de cobertura? Justifique.
 
+R: No cenário em que os testes ficaram verdes, vale a pena mantê-los, pois eles garantem que as regras que estavam certas continuem funcionando. Além disso, no projeto, testes como `ConsultaVeterinariaTest.deveCustar150ReaisIndependenteDoPorte()` e `AgendaServiceTest.deveCancelarAtendimentoAgendado()` são importantes, principalmente em situações em que mudanças no código possam gerar novas falhas. Nesse sentido, eles conseguem apontar quando alterações comprometem funcionalidades que antes estavam funcionando corretamente. Em um projeto real com prazo, eu daria maior prioridade aos caminhos de erro, pois problemas em regras de negócio e segurança podem causar impactos maiores no sistema. Assim, seria possível proteger principalmente as funcionalidades mais importantes e evitar problemas para os usuários.
+
 ---
 
 ## Parte 5 — Espaço livre (opcional)
