@@ -49,7 +49,7 @@
 
 | # | Onde estava | Qual princípio/boas práticas era violado | O que eu mudei |
 |---|---|---|---|
-| clean01 | AtendimentoFactory.java | Aula 2 - (Métodos e Comportamentos) - Nomes Significativos para Argumentos | Troquei o nome das variáveis para nomes claros |
+| clean01 | AtendimentoFactory.java (linhas 14-19) | Aula 2 - (Métodos e Comportamentos) - Nomes Significativos para Argumentos | Troquei o nome das variáveis para nomes claros |
 | clean02 | | | |
 | clean03 | | | |
 | clean04 | | | |
