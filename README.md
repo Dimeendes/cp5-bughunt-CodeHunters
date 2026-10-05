@@ -99,6 +99,9 @@ Um dos bugs fazia o agendamento duplicado passar pela verificação de conflito.
 Explique por que `==` entre Strings e `LocalDateTime` falhou aqui, por que ele
 "funciona por sorte" com literais como `"Rex"`, e o que a sua correção mudou.
 
+R: O bug acontecia porque '==' compara referências, e não o conteúdo dos objetos. No caso do 'LocalDateTime', mesmo duas datas com o mesmo valor normalmente são objetos diferentes, então a comparação retornava false e permitia o agendamento duplicado. Já com String, o '==' podia funcionar por sorte quando o valor era um literal como "Rex", pois literais iguais podem compartilhar o mesmo objeto no StringPool. Porém, nomes vindos de requisições ou do banco podem ser objetos diferentes, mesmo contendo o mesmo texto. Portanto, a correção foi trocar '==' por '.equals()', fazendo a comparação pelo conteúdo. Depois a verificação foi extraída para 'possuiConflitoDeHorario', ficando responsável apenas pela comparação das datas, já que o 'findByPetNome' já filtra os atendimentos pelo pet. 
+
+
 ### 4. Sobrescrita vs sobrecarga (Aula 7)
 Um dos bugs compilava sem nenhum erro: um método parecia sobrescrever
 `getDuracaoMinutos`, mas na verdade criava uma assinatura nova. Explique a
