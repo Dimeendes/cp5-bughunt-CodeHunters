@@ -52,7 +52,7 @@
 | clean01 | AtendimentoFactory.java (linhas 14-19) | Aula 2 - (Métodos e Comportamentos) - Nomes Significativos para Argumentos | Troquei o nome das variáveis para nomes claros |
 | clean02 | AtendimentoController.java (linhas 105-112) | Código morto | Remove parte do código que não é utilizada no momento |
 | clean03 | AtendimentoFactoryTest.java (linha 5) | Código morto/importação não utilizada | Remove um import que não é utilizado no arquivo |
-| clean04 | | | |
+| clean04 | Atendimento.java (linhas 71–90) | Aula 03 - (Encapsulamento, Getters e Setters) - Legibilidade e organização do código| Reformatei os getters e setters, separando retorno e atribuições em linhas distintas |
 | clean05 | | | |
 | clean06 | | | |
 
