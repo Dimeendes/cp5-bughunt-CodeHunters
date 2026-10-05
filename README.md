@@ -92,6 +92,8 @@ No `AgendaServiceTest`, o `@Mock` cria um `AtendimentoRepository` falso e o
 que o Spring faz em produção — quem "injeta" em cada mundo, e por que o teste
 consegue rodar sem banco e sem subir o Spring?
 
+R: No 'AgendaServiceTest', o Mockito assume o papel que o Spring desempenha em produção. O @Mock cria um 'AtendimentoRepository' falso, enquanto o '@InjectMocks' cria o 'AgendaService' e injeta esse mock nele. Em produção, quem faz essa injeção é o Spring, que fornece a implementação real do repository, conectada ao banco via JPA, por meio do '@Autowired'. No teste, o Mockito faz a injeção e define o comportamento do repository falso, como no 'when(...)'. Por fim, como o 'AgendaService' depende apenas da interface 'AtendimentoRepository', ele não precisa saber se está usando um repository real ou mock. Por isso, o teste pode rodar sem banco e sem iniciar o Spring, verificando apenas a regra de negócio do service de forma rápida e isolada.     
+
 ### 3. `==` vs `.equals()` (Aula 7)
 Um dos bugs fazia o agendamento duplicado passar pela verificação de conflito.
 Explique por que `==` entre Strings e `LocalDateTime` falhou aqui, por que ele
