@@ -2,7 +2,6 @@ package br.com.fiap.petfiap.factory;
 
 import br.com.fiap.petfiap.model.Atendimento;
 import br.com.fiap.petfiap.model.Banho;
-import br.com.fiap.petfiap.model.ConsultaVeterinaria;
 import br.com.fiap.petfiap.model.Tosa;
 import org.junit.jupiter.api.Test;
 
