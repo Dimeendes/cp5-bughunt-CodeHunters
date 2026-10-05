@@ -50,7 +50,7 @@
 | # | Onde estava | Qual princípio/boas práticas era violado | O que eu mudei |
 |---|---|---|---|
 | clean01 | AtendimentoFactory.java (linhas 14-19) | Aula 2 - (Métodos e Comportamentos) - Nomes Significativos para Argumentos | Troquei o nome das variáveis para nomes claros |
-| clean02 | | | |
+| clean02 | AtendimentoController.java (linhas 105-112) | Código morto | Remove parte do código que não é utilizada no momento |
 | clean03 | | | |
 | clean04 | | | |
 | clean05 | | | |
