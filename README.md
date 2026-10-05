@@ -54,7 +54,7 @@
 | clean03 | AtendimentoFactoryTest.java (linha 5) | Código morto/importação não utilizada | Remove um import que não é utilizado no arquivo |
 | clean04 | Atendimento.java (linhas 71–90) | Aula 03 - (Encapsulamento, Getters e Setters) - Legibilidade e organização do código| Reformatei os getters e setters, separando retorno e atribuições em linhas distintas |
 | clean05 | AtendimentoBuilder.java (linhas 42–47) | Aula 02 - (Métodos e comportamentos) - código duplicado para validar os campos | Extraí a validação repetida para o método validarCampoObrigatorio() |
-| clean06 | | | |
+| clean06 | AgendaService.java (linhas 27-28) | Aula 02 - (Métodos ecomportamentos) - condição complexa no `if` prejudicava a legibilidade| Extraí a condição para o método possuiConflitoDeHorario() |
 
 ## Parte 3 — Testes novos (regras que estavam sem cobertura)
 
