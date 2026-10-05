@@ -19,7 +19,7 @@
 | Campo | |
 |---|---|
 | **Total de bugs corrigidos** | 12 / 12 |
-| **Total de ajustes de Clean Code** | ___ / 6 |
+| **Total de ajustes de Clean Code** | 1 / 6 |
 | **Total de testes novos escritos** |  6 / 6 |
 | **Suíte final (Run As → JUnit Test)** | 26 testes, 0 falhas |
 
@@ -49,7 +49,7 @@
 
 | # | Onde estava | Qual princípio/boas práticas era violado | O que eu mudei |
 |---|---|---|---|
-| clean01 | | | |
+| clean01 | AtendimentoFactory.java | Aula 2 - (Métodos e Comportamentos) - Nomes Significativos para Argumentos | Troquei o nome das variáveis para nomes claros |
 | clean02 | | | |
 | clean03 | | | |
 | clean04 | | | |
