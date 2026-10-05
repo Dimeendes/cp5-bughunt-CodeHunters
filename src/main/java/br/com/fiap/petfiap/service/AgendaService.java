@@ -4,6 +4,8 @@ import br.com.fiap.petfiap.exception.AtendimentoNaoEncontradoException;
 import br.com.fiap.petfiap.exception.HorarioOcupadoException;
 import br.com.fiap.petfiap.model.Atendimento;
 import br.com.fiap.petfiap.repository.AtendimentoRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ import java.util.List;
 // Regras de agenda do PetFiap: agendar, concluir e cancelar atendimentos.
 @Service
 public class AgendaService {
+
+    private static final Logger logger = LoggerFactory.getLogger(AgendaService.class);
 
     @Autowired
     private AtendimentoRepository repository;
@@ -24,21 +28,25 @@ public class AgendaService {
         }
         List<Atendimento> doPet = repository.findByPetNome(novo.getPetNome());
         for (Atendimento a : doPet) {
-            if (a.getPetNome().equals(novo.getPetNome()) && a.getDataHora().equals(novo.getDataHora())
-                    && "AGENDADO".equals(a.getStatus())) {
+            if (possuiConflitoDeHorario(novo, a)) {
                 throw new HorarioOcupadoException(
                         "Pet " + novo.getPetNome() + " ja possui atendimento agendado nesse horario");
             }
         }
         Atendimento salvo = repository.save(novo);
-        System.out.println("Recibo: atendimento " + salvo.getProtocolo()
-                + " agendado para " + salvo.getPetNome() + " (tutor " + salvo.getTutorNome() + ")");
+        logger.info("Recibo: atendimento {} agendado para {} (tutor {})",
+                salvo.getProtocolo(), salvo.getPetNome(), salvo.getTutorNome());
         return salvo;
+    }
+
+    private boolean possuiConflitoDeHorario(Atendimento novo, Atendimento existente) {
+        return existente.getDataHora().equals(novo.getDataHora())
+                && "AGENDADO".equals(existente.getStatus());
     }
 
     // Busca pelo id; nunca retorna null, o orElseThrow garante a excecao.
     public Atendimento buscarPorId(Long id) {
-   return repository.findById(id)
+        return repository.findById(id)
                 .orElseThrow(() -> new AtendimentoNaoEncontradoException("Atendimento nao encontrado: " + id));
     }
 
