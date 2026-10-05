@@ -19,7 +19,7 @@
 | Campo | |
 |---|---|
 | **Total de bugs corrigidos** | 12 / 12 |
-| **Total de ajustes de Clean Code** | 3 / 6 |
+| **Total de ajustes de Clean Code** | 6 / 6 |
 | **Total de testes novos escritos** |  6 / 6 |
 | **Suíte final (Run As → JUnit Test)** | 26 testes, 0 falhas |
 
@@ -83,6 +83,8 @@
 O projeto chegou com 20 testes, 9 vermelhos. Descreva como você usou as
 mensagens de falha (ex.: `expected: <Rex> but was: <null>`) para caçar os bugs.
 O que a suíte de testes tem de melhor do que testar tudo na mão com curl?
+
+R: As mensagens de falha funcionaram como um guia para encontrar os bugs. Por exemplo, 'expected: <Rex> but was: <null>' mostrou que o nome não estava sendo armazenado, levando diretamente ao petNome(...) do AtendimentoBuilder. Já a principal vantagem da suíte de testes sobre testar tudo manualmente com curl é que ela executa as 26 verificações rapidamente e sempre da mesma forma, sem precisar subir a API ou configurar o banco. Além disso, testa situações difíceis de reproduzir manualmente e continua servindo como proteção, ou seja, se um bug voltar, os testes falham novamente.
 
 ### 2. Mock e injeção de dependência (Aulas 13 a 15)
 No `AgendaServiceTest`, o `@Mock` cria um `AtendimentoRepository` falso e o
