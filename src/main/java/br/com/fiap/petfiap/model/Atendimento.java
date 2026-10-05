@@ -68,24 +68,59 @@ public abstract class Atendimento {
     }
 
     // Getters e Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public int getProtocolo() { return protocolo; }
-    public void setProtocolo(int protocolo) { this.protocolo = protocolo; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getPetNome() { return petNome; }
-    public void setPetNome(String petNome) { this.petNome = petNome; }
+    public int getProtocolo() {
+        return protocolo;
+    }
 
-    public String getPetPorte() { return petPorte; }
-    public void setPetPorte(String petPorte) { this.petPorte = petPorte; }
+    public void setProtocolo(int protocolo) {
+        this.protocolo = protocolo;
+    }
 
-    public String getTutorNome() { return tutorNome; }
-    public void setTutorNome(String tutorNome) { this.tutorNome = tutorNome; }
+    public String getPetNome() {
+        return petNome;
+    }
 
-    public LocalDateTime getDataHora() { return dataHora; }
-    public void setDataHora(LocalDateTime dataHora) { this.dataHora = dataHora; }
+    public void setPetNome(String petNome) {
+        this.petNome = petNome;
+    }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public String getPetPorte() {
+        return petPorte;
+    }
+
+    public void setPetPorte(String petPorte) {
+        this.petPorte = petPorte;
+    }
+
+    public String getTutorNome() {
+        return tutorNome;
+    }
+
+    public void setTutorNome(String tutorNome) {
+        this.tutorNome = tutorNome;
+    }
+
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
