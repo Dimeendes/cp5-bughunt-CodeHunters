@@ -115,6 +115,8 @@ O `GeradorProtocolo` é um Singleton escrito à mão e causou um dos bugs.
 Explique o que ele garante, qual foi o bug, e por que o `AgendaService`
 (`@Service`) não corre o mesmo risco no container do Spring.
 
+R: O 'GeradorProtocolo' foi criado como um Singleton, ou seja, deveria garantir que existisse apenas uma instância na aplicação. O bug estava no 'getInstancia()': ele criava um novo 'GeradorProtocolo', mas não o armazenava em 'instância'. Assim, cada chamada criava um novo objeto com o contador zerado, fazendo os atendimentos receberem o protocolo 1. A correção foi salvar a instância antes de retorná-la. O 'AgendaService', por outro lado, é um '@Service'gerenciado pelo container do Spring. Por padrão, o Spring cria uma única instância do bean e reutiliza essa mesma instância quando ela é injetada. Portanto, essa responsabilidade não depende de um 'getInstancia()' escrito manualmente e sujeito a erros de implementação.
+
 ### 6. Cobertura de testes: onde parar? (Aula 15)
 Dos 6 testes novos que você escreveu, alguns ficaram vermelhos (revelaram
 bugs) e outros verdes de cara (regras já corretas). Vale a pena manter os que
