@@ -108,6 +108,8 @@ Um dos bugs compilava sem nenhum erro: um método parecia sobrescrever
 diferença entre override e overload nesse caso e por que a anotação `@Override`
 teria impedido o bug.
 
+R: O problema ocorreu porque 'override' exige a mesma assinatura do método da superclasse, enquanto 'overload' cria outro método com o mesmo nome, mas parâmetros diferentes. Em 'Atendimento', 'getDuracaoMinutos()' não recebe parâmetros, mas a 'Tosa' tinha 'getDuracaoMinutos(String porte)'. Assim, ela criou uma sobrecarga em vez de sobrescrever o método, e o código compilava normalmente. Quando chamado sem argumentos, o sistema usava o método herdado, retornando 30 minutos em vez de 60. A anotação '@Override' teria impedido o bug, pois o compilador verificaria se realmente existe um método sendo sobrescrito. Como as assinaturas seriam diferentes, o código não compilava. A correção removeu o parâmetro e adicionou '@Override', fazendo a 'Tosa' sobrescrever corretamente o método de 'Atendimento'.
+
 ### 5. Singleton manual vs bean do Spring (Aula 14)
 O `GeradorProtocolo` é um Singleton escrito à mão e causou um dos bugs.
 Explique o que ele garante, qual foi o bug, e por que o `AgendaService`
